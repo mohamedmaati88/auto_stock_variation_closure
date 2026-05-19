@@ -69,6 +69,7 @@ Accounting > Settings > Auto Stock Variation Closure
         'views/account_move_views.xml',
         'views/stock_valuation_layer_views.xml',
     ],
+    'images': ['static/description/banner.png'],
     'installable': True,
     'application': False,
     'auto_install': False,
