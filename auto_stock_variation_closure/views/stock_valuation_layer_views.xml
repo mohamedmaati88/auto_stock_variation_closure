@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        The built-in "Remaining" filter (has_remaining_qty) already uses
+        domain [('remaining_qty', '>', 0)].  No domain change is needed here;
+        this record is kept as a placeholder in case a future Odoo version
+        changes the filter.  The real fix is in stock_picking.py where we
+        force remaining_qty to exactly 0.0 (not a floating-point residual).
+    -->
+</odoo>
