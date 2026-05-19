@@ -58,7 +58,7 @@ Accounting > Settings > Auto Stock Variation Closure
   * Choose the Stock Variation account
   * Choose the journal (defaults to the company stock journal)
     """,
-    'author': 'VRS',
+    'author': 'Mohamed Maati',
     'license': 'LGPL-3',
     'depends': ['stock_account', 'stock_landed_costs', 'mrp_subcontracting'],
     'data': [
