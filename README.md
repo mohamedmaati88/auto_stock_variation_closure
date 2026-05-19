@@ -1,0 +1,1 @@
+# auto_stock_variation_closure
