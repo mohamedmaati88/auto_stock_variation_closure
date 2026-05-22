@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_auto_stock_variation" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.auto.stock.variation</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='stock']" position="inside">
+
+                    <block title="Auto Stock Variation Closure">
+
+                        <setting
+                            id="stock_auto_interim_close"
+                            string="Stock Variation Management"
+                            help="Automates stock variation accounting workflows between inventory operations and accounting processes through provisional and compensation journal entries.">
+                            <field name="stock_auto_interim_close"/>
+                        </setting>
+
+                        <setting
+                            id="stock_change_in_stock_account"
+                            string="Stock Variation Account"
+                            invisible="not stock_auto_interim_close">
+                            <field name="stock_change_in_stock_account_id"/>
+                        </setting>
+
+                        <setting
+                            id="stock_auto_interim_journal"
+                            string="Journal"
+                            help="General journal for the provisional and compensation entries. Defaults to the company stock journal when left empty."
+                            invisible="not stock_auto_interim_close">
+                            <field name="stock_auto_interim_journal_id"/>
+                        </setting>
+
+                        <setting
+                            id="stock_sales_use_expense_interim"
+                            string="Sales Interim Expense Account"
+                            help="Post delivery cost entries to a designated expense account instead of the standard interim account. Priority: product expense account → product category expense account → general settings expense account."
+                            invisible="not stock_auto_interim_close">
+                            <field name="stock_sales_use_expense_interim"/>
+                        </setting>
+
+                    </block>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Make categ_id required on the product form when product is storable -->
+    <record id="product_template_form_view_storable_categ_required"
+            model="ir.ui.view">
+        <field name="name">product.template.form.storable.categ.required</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="attributes">
+                <attribute name="required">is_storable</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
